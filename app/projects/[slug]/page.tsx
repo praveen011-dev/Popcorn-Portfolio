@@ -8,7 +8,6 @@ type Props = {
 };
 
 export default async function ProjectDetails({ params }: Props) {
-  // FIX: unwrapping the Promise
   const { slug } = await params;
 
   const project = projects.find((p) => p.slug === slug);
@@ -16,26 +15,43 @@ export default async function ProjectDetails({ params }: Props) {
   if (!project) return notFound();
 
   return (
-      <section className="space-y-6">
-        <h1 className="text-4xl font-extrabold">{project.title}</h1>
+    <section className="space-y-8">
+      {/* Title */}
+      <h1 className="text-4xl font-extrabold text-[var(--text)]">
+        {project.title}
+      </h1>
 
-        <p className="text-white/70 max-w-2xl">{project.description}</p>
+      {/* Description */}
+      <p className="text-[var(--text)]/70 text-lg max-w-2xl leading-relaxed">
+        {project.description}
+      </p>
 
-        <div>
-          <h2 className="text-xl font-semibold mb-2">Tech Used:</h2>
-          <ul className="list-disc list-inside text-white/70">
-            {project.tech.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-        </div>
+      {/* Tech Used */}
+      <div className="space-y-2">
+        <h2 className="text-xl font-semibold text-[var(--text)]">Tech Used:</h2>
 
-        <a
-          href="/projects"
-          className="inline-block mt-6 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition"
-        >
-          ← Back to Projects
-        </a>
-      </section>
+        <ul className="list-disc list-inside text-[var(--text)]/70 space-y-1">
+          {project.tech.map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Back Button */}
+      <a
+        href="/projects"
+        className="
+          inline-block mt-8 px-5 py-2 
+          bg-[var(--card-bg)]
+          border border-[var(--card-border)]
+          rounded-lg 
+          text-[var(--text)]
+          hover:scale-[1.03]
+          transition
+        "
+      >
+        ← Back to Projects
+      </a>
+    </section>
   );
 }

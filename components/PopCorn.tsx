@@ -64,7 +64,7 @@ const kernelVariants = {
 
 export default function PopCorn() {
   return (
-    <div className="relative w-full h-[320px] overflow-visible">
+    <div className="relative w-full h-[320px] overflow-visible z-0 pointer-events-none">
       <motion.div
         className="relative w-full h-full"
         initial="initial"

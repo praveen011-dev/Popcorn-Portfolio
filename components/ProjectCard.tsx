@@ -10,25 +10,36 @@ export default function ProjectCard({ project }: Props) {
     <div
       className="
         p-4 sm:p-5 
-        bg-white/10 rounded-xl 
-        hover:bg-white/20 
-        transition 
-        flex flex-col justify-between 
+        rounded-xl
+        bg-[var(--card-bg)]
+        border border-[var(--card-border)]
+        backdrop-blur-md 
+        transition
+        flex flex-col justify-between
         h-full
+        hover:scale-[1.02]
       "
     >
       {/* Title */}
-      <h2 className="text-lg sm:text-xl font-semibold mb-2 leading-snug">
+      <h2 className="text-lg sm:text-xl font-semibold mb-2 leading-snug text-[var(--text)]">
         {project.title}
       </h2>
 
       {/* Description */}
-      <p className="text-white/70 text-sm sm:text-base mb-4">{project.short}</p>
+      <p className="text-[var(--text)]/70 text-sm sm:text-base mb-4">
+        {project.short}
+      </p>
 
       {/* Link */}
       <Link
         href={`/projects/${project.slug}`}
-        className="text-yellow-300 text-sm sm:text-base underline mt-auto"
+        className="
+          text-yellow-500
+          text-sm sm:text-base 
+          underline 
+          mt-auto
+          hover:text-yellow-600
+        "
       >
         View Details →
       </Link>
