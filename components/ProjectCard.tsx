@@ -48,10 +48,7 @@ export default function ProjectCard({ project }: Props) {
             <span
               key={t}
               className="
-                px-2 py-1 text-xs rounded-md
-                bg-yellow-200/60 text-black
-                dark:bg-yellow-300/20 dark:text-yellow-200
-              "
+                  relative z-[10] px-2 py-1 text-xs rounded-md font-medium  text-[var(--text)]/80 border border-yellow-600 shadow-sm  "
             >
               {t}
             </span>
