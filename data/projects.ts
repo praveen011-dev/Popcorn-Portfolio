@@ -4,10 +4,7 @@ export type Project = {
   short: string;
   description: string;
   tech: string[];
-  // optional: you can add fields later, e.g.
-  // cover?: string;
-  // url?: string;
-  // repo?: string;
+  image: string; // 🔥 added
 };
 
 export const projects: Project[] = [
@@ -16,39 +13,48 @@ export const projects: Project[] = [
     title: "Popcorn Player",
     short: "A fun video player UI with popcorn popping effects.",
     description:
-      "A custom-built media player interface inspired by cinema popcorn vibes. Includes animated controls, playful theme, and smooth transitions.",
+      "A custom-built cinema-inspired media player with popcorn popping animations, custom controls, and playful transitions.",
     tech: ["Next.js", "Tailwind", "Framer Motion"],
+    image: "/projects/popcorn.jpg",
   },
+
   {
     slug: "movie-app",
     title: "Movie App",
     short: "Search and explore movies using TMDB API.",
     description:
-      "Browse, search, and save your favorite movies. This app uses TMDB API with stylish UI and responsive layouts.",
-    tech: ["React", "API", "Responsive UI"],
+      "Browse, search, and save your favorite movies. Built with responsive UI, TMDB API integrations, and clean filtering UX.",
+    tech: ["React", "TMDB API", "Responsive UI"],
+    image: "/projects/movie-app.webp",
   },
+
   {
     slug: "portfolio-v1",
     title: "Developer Portfolio V1",
     short: "My first simple personal portfolio website.",
     description:
-      "A clean, minimal portfolio built with HTML, CSS, and JavaScript. Showcases early projects and blog posts.",
+      "A minimal personal portfolio built using HTML, CSS, and JavaScript. Includes project showcase and contact section.",
     tech: ["HTML", "CSS", "JavaScript"],
+    image: "/projects/portfolio-v1.webp",
   },
+
   {
     slug: "snackcart",
     title: "SnackCart",
     short: "Mini e-commerce snack store with cart functionality.",
     description:
-      "A playful snack store UI where users can add snacks to their cart, see animations, and view checkout flow.",
+      "A fun snack-based mini e-commerce UI featuring cart logic, animated interactions, and a clean product layout.",
     tech: ["Next.js", "State Management"],
+    image: "/projects/snackcart.webp",
   },
+
   {
     slug: "design-system",
     title: "Design System",
     short: "A reusable design system with components.",
     description:
-      "Created a theme-able UI component library featuring buttons, cards, grids, and utility classes.",
+      "A scalable design system built with TailwindCSS and Storybook — including button variations, card layouts, and typography presets.",
     tech: ["TailwindCSS", "Storybook"],
+    image: "/projects/design-system.png",
   },
 ];
